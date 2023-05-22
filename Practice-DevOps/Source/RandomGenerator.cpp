@@ -25,7 +25,7 @@ RandomGenerator::RandomGenerator() {
 	mersenne = std::mt19937(static_cast<std::mt19937::result_type>(std::time(nullptr)));
 	// Create a reusable random number generator that generates uniform numbers between 1 and 6
 	mIntGenerator = std::uniform_int_distribution<int>(minRange, maxRange);
-	mFloatGenerator = std::uniform_real_distribution<float>(minRange, maxRange);
+	mFloatGenerator = std::uniform_real_distribution<float>(static_cast<float>(minRange), static_cast<float>(maxRange));
 }
 
 //This uses an LCG algoritm(unsigned 15bit period)
@@ -35,7 +35,7 @@ int RandomGenerator::getIntLCG()
 	static const double fraction( 1.0 / (RAND_MAX + 1.0) );																 // evenly distribute the random number across our range
 	return minRange + static_cast<int>((maxRange - minRange + 1) * (std::rand() * fraction));
 }
-
+//Generate with Mersenne algorithm
 int RandomGenerator::getIntMersenne() 
 {
 	return mIntGenerator(mersenne);

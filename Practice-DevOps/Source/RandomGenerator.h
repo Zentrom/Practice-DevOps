@@ -18,9 +18,9 @@ public:
 private:
 	RandomGenerator();
 	static RandomGenerator* singleton;
-	std::mt19937 mersenne;
-	std::uniform_int_distribution<int> mIntGenerator;
-	std::uniform_real_distribution<float> mFloatGenerator;
-	const int minRange = 0;
-	const int maxRange = 100;
+	std::mt19937 mersenne; //Mersenne engine
+	std::uniform_int_distribution<int> mIntGenerator; //int generator
+	std::uniform_real_distribution<float> mFloatGenerator; //float generator
+	const int minRange = 0; //min generated number
+	const int maxRange = 100; //max generated number
 };
