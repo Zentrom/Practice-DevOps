@@ -17,6 +17,7 @@
 mono_crash.*
 
 # Build results
+[Vv]cpkg/
 [Vv]cpkg_installed/
 [Bb]uilds/
 VSgenerated/
